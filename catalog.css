@@ -125,3 +125,8 @@
  .dots .active {
      background: #111;
  }
+
+ .carou-arrow{
+    filter: invert(1) !important;
+    
+ }
