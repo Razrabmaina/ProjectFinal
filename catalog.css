@@ -130,3 +130,128 @@
     filter: invert(1) !important;
     
  }
+.product-card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 16px;
+  width: 220px;
+  text-align: center;
+  font-family: sans-serif;
+}
+.product-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+.product-card .price {
+  font-weight: bold;
+  color: #2e7d32;
+}
+.product-card button {
+  margin-top: 10px;
+  padding: 8px 16px;
+  background-color: #000000;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+    .product-card {
+      border: 1px solid #7a7a7a;
+      border-radius: 8px;
+      padding: 16px;
+      width: 220px;
+      text-align: center;
+      font-family: sans-serif;
+      background-color: rgb(255, 255, 255);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .product-card img {
+      width: 100%;
+      height: auto;
+      border-radius: 4px;
+    }
+
+    .product-card .price {
+      font-weight: bold;
+      color: #3599b8;
+      margin: 12px 0;
+    }
+
+    .product-card button {
+      margin-top: 10px;
+      padding: 8px 16px;
+      background-color: #000000;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .product-card button:hover {
+      background-color: #353535;
+    }
+
+    /* Модальне вікно */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.5);
+    }
+
+    .modal-content {
+      background-color: #fff;
+      margin: 10% auto;
+      padding: 20px;
+      border-radius: 8px;
+      width: 300px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+
+    .modal-content h4 {
+      margin-top: 0;
+    }
+
+    .modal-content input,
+    .modal-content textarea {
+      width: 100%;
+      margin-bottom: 12px;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-family: sans-serif;
+    }
+
+    .modal-content button {
+      background-color: #000000;
+      color: white;
+    }
+
+    .close {
+      float: right;
+      font-size: 20px;
+      font-weight: bold;
+      color: #888;
+      cursor: pointer;
+    }
+
+    .close:hover {
+      color: black;
+    }
+ .container-car {
+
+      display: flex;            /* Вмикає flexbox */
+      justify-content: space-around; /* Розміщення по головній осі */
+      align-items: center;      /* Вирівнювання по перпендикулярній осі */
+      height: 100vh;            /* Висота контейнера — 100% вікна */
+      background-color: #f0f0f0;
+    
+ }
