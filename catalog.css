@@ -253,16 +253,20 @@
  }
 
  .container-car {
-
+   /* z-index: 20;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); */
    display: flex;
    /* Вмикає flexbox */
    justify-content: space-around;
    /* Розміщення по головній осі */
    align-items: center;
    /* Вирівнювання по перпендикулярній осі */
-   height: 100vh;
+   height: 100%;
    /* Висота контейнера — 100% вікна */
-   background-color: #f0f0f0;
+   /* background-color: #f0f0f0; */
 
  }
 
@@ -275,6 +279,213 @@
 
  }
 
-.product-card img {
-  height: 110px;
-}
+ .product-card img {
+   height: 110px;
+ }
+
+ :root {
+   --accent: #007bff;
+   --bg-dark: #0c0c0c;
+   --text-light: #fff;
+   --msg-you: #0d6efd;
+   --msg-them: #222;
+ }
+
+ /* Кнопка відкриття чату */
+ .chat-toggle {
+   position: fixed;
+   right: 25px;
+   bottom: 25px;
+   width: 60px;
+   height: 60px;
+   border-radius: 50%;
+   background: var(--accent);
+   color: white;
+   font-size: 26px;
+   border: none;
+   cursor: pointer;
+   z-index: 999;
+   box-shadow: 0 0 15px rgba(0, 123, 255, 0.6);
+   transition: 0.3s;
+ }
+
+ .chat-toggle:hover {
+   transform: scale(1.08);
+ }
+
+ /* Вікно чату */
+ .chat-popup {
+   position: fixed;
+   bottom: 95px;
+   right: 25px;
+   width: 340px;
+   height: 480px;
+   background: #111;
+   border: 1px solid #1f1f1f;
+   border-radius: 12px;
+   display: none;
+   flex-direction: column;
+   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.8);
+   overflow: hidden;
+   z-index: 998;
+ }
+
+ .chat-header {
+   background: #0d0d0d;
+   color: var(--text-light);
+   padding: 12px;
+   text-align: center;
+   font-weight: bold;
+   font-size: 16px;
+   border-bottom: 1px solid #1f1f1f;
+ }
+
+ .chat-messages {
+   flex: 1;
+   padding: 12px;
+   overflow-y: auto;
+   display: flex;
+   flex-direction: column;
+   gap: 10px;
+ }
+
+ .msg {
+   max-width: 80%;
+   padding: 8px 12px;
+   border-radius: 10px;
+   font-size: 14px;
+   line-height: 1.3;
+ }
+
+ .msg.you {
+   align-self: flex-end;
+   background: var(--msg-you);
+   color: white;
+ }
+
+ .msg.them {
+   align-self: flex-start;
+   background: var(--msg-them);
+   color: white;
+ }
+
+ .chat-input {
+   display: flex;
+   border-top: 1px solid #1f1f1f;
+ }
+
+ .chat-input input {
+   flex: 1;
+   padding: 10px;
+   background: #0c0c0c;
+   border: none;
+   color: white;
+   outline: none;
+ }
+
+ .chat-input button {
+   background: var(--accent);
+   border: none;
+   color: white;
+   padding: 10px 16px;
+   cursor: pointer;
+ }
+
+ .chat-close {
+   position: absolute;
+   right: 10px;
+   top: 8px;
+   color: white;
+   font-size: 20px;
+   cursor: pointer;
+ }
+
+ .chat-header span {
+   color: #007bff;
+ }
+
+ .thank-popup {
+   position: fixed;
+   bottom: 30px;
+   /* можна змінити на top:30px для зверху */
+   left: 30px;
+   /* або left:50%; transform для центру */
+   background: #2f4668;
+   color: white;
+   padding: 15px 25px;
+   border-radius: 10px;
+   font-weight: bold;
+   font-size: 16px;
+   display: none;
+   z-index: 9999;
+   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+   animation: fadeInOut 3s forwards;
+ }
+
+ @keyframes fadeInOut {
+   0% {
+     opacity: 0;
+     transform: translateY(20px);
+   }
+
+   10% {
+     opacity: 1;
+     transform: translateY(0);
+   }
+
+   90% {
+     opacity: 1;
+     transform: translateY(0);
+   }
+
+   100% {
+     opacity: 0;
+     transform: translateY(-20px);
+   }
+ }
+
+ .footer {
+    background: #ffffff;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    margin-top: 30px;
+  }
+
+  .footer h3, .footer h5 {
+    color: #ffc400;
+  }
+
+  .footer p {
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #ccc;
+  }
+
+  .footer-brand p {
+    max-width: 250px;
+  }
+
+  .social-icon {
+    width: 32px;
+    height: 32px;
+    transition: 0.3s;
+  }
+
+  .social-icon:hover {
+    transform: scale(1.2);
+    filter: brightness(1.2);
+  }
+
+  @media (max-width: 992px) {
+    .footer .container {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    .footer-brand p {
+      max-width: 100%;
+    }
+  }

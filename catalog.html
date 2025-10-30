@@ -16,7 +16,7 @@
     <nav class="d-flex justify-content-center align-items-center gap-4">
       <a href="./index1.html" class="text-white text-decoration-none fs-5">Головна</a>
       <h1 class="m-0">Зірочка</h1>
-      
+
     </nav>
   </header>
 
@@ -61,10 +61,10 @@
         <div class="d-flex flex-lg-row flex-column align-items-center">
           <img src="images/r8.jpg" class="d-block w-50" alt="Авто 3">
           <div class="p-4 w-50">
-            <h2>Audi A8 2024</h2>
+            <h2>Audi r8 2024</h2>
             <p>Топове рішення для шустрих пацанів</p>
             <p class="fw-bold">Тел: +31 30 231 7457</p>
-            <span class="fs-4 fw-bold text-primary">$87,000</span>
+            <span class="fs-4 fw-bold text-primary">$96,000</span>
           </div>
         </div>
       </div>
@@ -90,8 +90,7 @@
             <h2> Audi A6 2023</h2>
             <p>Найкраще рішення для повсягдених поїздок по місту.</p>
             <span class="fs-4 fw-bold text-primary">$45,000</span>
-            <button onclick="openModal()">Купити</button>
-
+            
           </div>
         </div>
       </div>
@@ -119,7 +118,7 @@
       <button onclick="openModal()">Купити</button>
     </div>
 
-     <div class="product-card">
+    <div class="product-card">
       <img src="images/audi_a6__611209344fx.jpg" alt="Назва товару">
       <h3>AUDI A6</h3>
       <p class="price">40000$</p>
@@ -141,27 +140,27 @@
     </div>
 
     <div class="product-card">
-      <img src="images/2022_Volkswagen_Virtus_1.5_GT_(India)_front_view_02.png" alt="Назва товару">
-      <h3>WOLKSWAGEN VIRTUS</h3>
+      <img src="https://tse3.mm.bing.net/th/id/OIP.YGVP5P6KA3S97etfhVRZWAHaEd?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Назва товару">
+      <h3>VW VIRTUS</h3>
       <p class="price">23000$</p>
       <button onclick="openModal()">Купити</button>
     </div>
 
     <div class="product-card">
       <img src="images/ford_edge__619905584f.webp" alt="Назва товару">
-      <h3>FORD EDGE</h3>
+      <h3>FORD <br> EDGE</h3>
       <p class="price">13500$</p>
       <button onclick="openModal()">Купити</button>
     </div>
 
-<div class="product-card">
+    <div class="product-card">
       <img src="images/skoda_octavia__614194841f.webp" alt="Назва товару">
       <h3>SKODA OCTAVIA</h3>
       <p class="price">25760$</p>
       <button onclick="openModal()">Купити</button>
     </div>
 
-<div class="product-card">
+    <div class="product-card">
       <img src="images/tesla_cybertruck__613388092f.webp" alt="Назва товару">
       <h3>SKODA OCTAVIA</h3>
       <p class="price">90000$</p>
@@ -170,7 +169,13 @@
 
   </div>
 
+
+  </div>
   <!-- container needed -->
+  <div id="thankMessage" class="thank-popup">
+    ✅ Дякуємо! Ваше замовлення отримано.
+  </div>
+
   <div class="container-car">
     <div id="buyModal" class="modal">
       <div class="modal-content">
@@ -182,31 +187,142 @@
         <button>Надіслати</button>
       </div>
     </div>
-
   </div>
-
-  <script>
-    function openModal() {
-      document.getElementById('buyModal').style.display = 'block';
-    }
-
-    function closeModal() {
-      document.getElementById('buyModal').style.display = 'none';
-    }
-
-    // Закриття модального вікна при кліку поза ним
-    window.onclick = function (event) {
-      const modal = document.getElementById('buyModal');
-      if (event.target == modal) {
-        modal.style.display = "none";
+    <script>
+      document.addEventListener("DOMContentLoaded", (event) => {
+        document.querySelector('.container-car').style.display = 'none';
+      });
+      function openModal() {
+        document.querySelector('.container-car').style.display = 'flex';
+        document.getElementById('buyModal').style.display = 'block';
       }
-    }
-  </script>
 
-  <footer>
-    
-  </footer>
+      function closeModal() {
+        document.getElementById('buyModal').style.display = 'none';
+      }
 
+      // Закриття модального вікна при кліку поза ним
+      window.onclick = function (event) {
+        const modal = document.getElementById('buyModal');
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      }
+    </script>
+    <!-- Додай всередині .modal-content, після кнопки Надіслати -->
+
+
+    <script>
+      // Вибираємо кнопку "Надіслати"
+      const sendBtn = document.querySelector('#buyModal button');
+      const thankMessage = document.getElementById('thankMessage');
+
+      sendBtn.addEventListener('click', (e) => {
+        e.preventDefault(); // щоб форма не перезавантажувала сторінку
+        // Показуємо повідомлення
+        closeModal(); // закриваємо модалку
+        thankMessage.style.display = 'block';
+
+        // Можна додати автозакриття через 3 секунди
+        setTimeout(() => {
+          thankMessage.style.display = 'none';
+        }, 3000);
+
+        // Тут можна додати логіку відправки даних на сервер
+      });
+    </script>
+
+
+    <button class="chat-toggle" id="chatToggle">💬</button>
+
+    <div class="chat-popup" id="chatPopup">
+      <div class="chat-header">
+        <span>Підтримка “Зірочка”</span>
+        <span class="chat-close" id="chatClose">&times;</span>
+      </div>
+      <div class="chat-messages" id="chatMessages">
+        <div class="msg them">Вітаємо у “Зірочка”! 🚗<br>Як можемо допомогти?</div>
+      </div>
+      <form class="chat-input" id="chatForm">
+        <input type="text" id="chatInput" placeholder="Напишіть повідомлення..." autocomplete="off">
+        <button type="submit">➤</button>
+      </form>
+    </div>
+
+    <script>
+      const chatToggle = document.getElementById('chatToggle');
+      const chatPopup = document.getElementById('chatPopup');
+      const chatClose = document.getElementById('chatClose');
+      const chatForm = document.getElementById('chatForm');
+      const chatInput = document.getElementById('chatInput');
+      const chatMessages = document.getElementById('chatMessages');
+
+      chatToggle.addEventListener('click', () => {
+        chatPopup.style.display = 'flex';
+        chatToggle.style.display = 'none';
+      });
+
+      chatClose.addEventListener('click', () => {
+        chatPopup.style.display = 'none';
+        chatToggle.style.display = 'block';
+      });
+
+      chatForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const text = chatInput.value.trim();
+        if (!text) return;
+
+        addMessage(text, 'you');
+        chatInput.value = '';
+
+        setTimeout(() => {
+          addMessage('Дякуємо! Наш менеджер скоро відповість 😉', 'them');
+        }, 700);
+      });
+
+      function addMessage(text, who) {
+        const msg = document.createElement('div');
+        msg.className = `msg ${who}`;
+        msg.textContent = text;
+        chatMessages.appendChild(msg);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+      }
+    </script>
+    <!-- 🔹 FOOTER -->
+    <footer class="footer bg-dark text-white pt-5 pb-3">
+      <div class="container d-flex flex-column flex-lg-row justify-content-between align-items-start gap-4">
+
+        <!-- Лого та коротко про салон -->
+        <div class="footer-brand">
+          <h3 class="text-primary">Зірочка</h3>
+          <p>Авто салон преміум класу. Найкращі моделі та спеціальні пропозиції для наших клієнтів.</p>
+        </div>
+
+        <!-- Контакти -->
+        <div class="footer-contact">
+          <h5>Контакти</h5>
+          <p>📞 Телефон: +31 30 231 7457</p>
+          <p>✉️ Email: info@zirochka.com</p>
+          <p>📍 Адреса: м. Київ, вул. Автошляхова, 12</p>
+        </div>
+
+        <!-- Соцмережі -->
+        <div class="footer-social">
+          <h5>Ми в соцмережах</h5>
+          <div class="social-icons d-flex gap-3 mt-2">
+            <a href="#" target="_blank"><img src="images/w513h5131371296104Facebook.png" alt="Facebook" class="social-icon"></a>
+            <a href="#" target="_blank"><img src="images/Instagram_logo_2022.svg.webp" alt="Instagram" class="social-icon"></a>
+            <a href="#" target="_blank"><img src="images/ec26c996e7.jpg" alt="Twitter" class="social-icon"></a>
+            <a href="#" target="_blank"><img src="images/YouTube_social_white_square_(2024).svg" alt="YouTube" class="social-icon"></a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="text-center mt-4 small text-muted">
+        © 2025 Зірочка. Всі права захищені.
+      </div>
+    </footer>
 </body>
 
 </html>
